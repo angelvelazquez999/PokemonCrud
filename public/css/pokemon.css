@@ -38,7 +38,7 @@ table#reportsTable th, table#reportsTable td {
 }
 
 table#reportsTable th {
-    background-color: #007bff;
+    background-color: #212f3e;
     color: #fff;
 }
 
@@ -117,7 +117,7 @@ table#reportsTable .open-modal-delete-btn:hover i {
 .dataTables_wrapper {
     margin-top: 20px;
     padding: 15px;
-    background-color: #ffffff;
+    background-color: #656565;
     border-radius: 8px;
 }
 
