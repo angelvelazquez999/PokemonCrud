@@ -15,6 +15,14 @@ php artisan migrate
 
 php artisan serve
 
+## Actualización de Eduardo si no te deja registrarte o iniciar sesión coloca esto
+
+npm install
+
+npm run dev
+
+## Con esos dos comandos ya deberia dejarte registrar
+
 
 te registras y ya te vas en la nav a pokemones
 
