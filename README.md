@@ -18,3 +18,10 @@ php artisan serve
 
 te registras y ya te vas en la nav a pokemones
 
+
+## CSS
+public\css\pokemon.css
+
+## Vistas y Vistas de Modales
+resources\views\pokemon\index.blade.php
+resources\views\pokemon\modals\
