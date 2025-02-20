@@ -23,7 +23,11 @@
                         <label for="pokemonLevel" class="form-label">Nivel</label>
                         <input type="number" class="form-control" id="pokemonLevel" name="nivel" required>
                     </div>
-                    <button type="submit" class="addPokemon" id="save" >Guardar</button>
+                    <div class="mb-3">
+                        <label for="pokemonImage">Imagen:</label>
+                        <input type="file" id="pokemonImage" name="imagen" accept="image/*">
+                    </div>
+                    <button type="submit" class="addPokemon" id="save">Guardar</button>
                 </form>
             </div>
         </div>

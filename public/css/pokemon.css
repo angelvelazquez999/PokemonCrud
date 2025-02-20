@@ -48,7 +48,8 @@ table#reportsTable tr:hover {
 
 /* Estilo para los botones en la tabla */
 table#reportsTable .open-modal-edit-btn,
-table#reportsTable .open-modal-delete-btn {
+table#reportsTable .open-modal-delete-btn,
+table#reportsTable .open-modal-imagen-btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -56,9 +57,10 @@ table#reportsTable .open-modal-delete-btn {
 }
 
 table#reportsTable .open-modal-edit-btn i,
-table#reportsTable .open-modal-delete-btn i {
+table#reportsTable .open-modal-delete-btn i,
+table#reportsTable .open-modal-imagen-btn i {
     font-size: 1.2rem;
-    color: #007bff;
+    color: #97a0a9;
 }
 
 table#reportsTable .open-modal-edit-btn:hover i,

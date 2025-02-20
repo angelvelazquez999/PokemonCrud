@@ -51,6 +51,7 @@ const initPokemonTable = async () => {
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
                         <button title="Eliminar" class="open-modal-delete-btn" onclick="eliminarPokemon(${data.id});"><i class="fa-solid fa-trash"></i></button>
+                        <button title="Imagen" class="open-modal-imagen-btn" data-id="${data.id}"><i class="fa-solid fa-eye"></i></button>
                     `;
                 },
                 orderable: false,
@@ -74,57 +75,62 @@ const getToken = () => document.querySelector('meta[name="csrf-token"]').getAttr
 
 // Crear Pokemon
 async function createPokemon() {
-    const data = {
-        nombre: document.getElementById("pokemonName").value.trim(),
-        tipo: document
-            .getElementById("pokemonType")
-            .value.trim(),
-        region: document.getElementById("pokemonRegion").value,
-        nivel: document.getElementById("pokemonLevel").value,
-    };
+    const formData = new FormData();
+    formData.append("nombre", document.getElementById("pokemonName").value.trim());
+    formData.append("tipo", document.getElementById("pokemonType").value.trim());
+    formData.append("region", document.getElementById("pokemonRegion").value);
+    formData.append("nivel", document.getElementById("pokemonLevel").value);
 
-        try {
-            const url = route("pokemonCreate");
-            const token = getToken();
-            const init = {
-                method: "POST",
-                headers: {
-                    "X-CSRF-TOKEN": token,
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            };
-            let req = await fetch(url, init);
+    // Agrega la imagen solo si se ha seleccionado
+    const imagenInput = document.getElementById("pokemonImage");
+    if (imagenInput.files.length > 0) {
+        formData.append("imagen", imagenInput.files[0]);
+    }
 
-            if (req.ok) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Pokemon Creado",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-                location.replace(route("pokemonShow"));
-            } else {
-                Swal.fire({
-                    icon: "error",
-                    title: "No se pudo crear el Pokemon.",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-            }
-        } catch (e) {
-            console.error(e);
+    try {
+        const url = route("pokemonCreate");
+        const token = getToken();
+        const init = {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": token,
+                Accept: "application/json",
+            },
+            body: formData,
+        };
+
+        let req = await fetch(url, init);
+
+        if (req.ok) {
+            Swal.fire({
+                icon: "success",
+                title: "Pokémon creado",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            location.replace(route("pokemonShow"));
+        } else {
+            const errorData = await req.json();
             Swal.fire({
                 icon: "error",
-                title: "Error en la solicitud",
-                text: e.message,
+                title: "No se pudo crear el Pokémon.",
+                text: errorData.message || "Error desconocido",
                 showConfirmButton: false,
                 timer: 1500,
             });
         }
-
+    } catch (e) {
+        console.error(e);
+        Swal.fire({
+            icon: "error",
+            title: "Error en la solicitud",
+            text: e.message,
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    }
 }
+
 
 document
     .querySelector("#createPokemonForm")
@@ -252,3 +258,15 @@ document
         event.preventDefault();
         updatePokemon();
     });
+
+
+
+// Abrir modal con imagen
+$(document).on("click", ".open-modal-imagen-btn", function () {
+    const pokemonId = $(this).data("id");
+    const imageUrl = `/getImage/${pokemonId}`;
+
+    // Muestra el modal y asigna la imagen
+    $("#pokemonImageModal img").attr("src", imageUrl);
+    $("#pokemonImageModal").modal("show");
+});

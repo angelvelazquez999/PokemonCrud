@@ -23,6 +23,7 @@ Route::middleware([
     Route::post('/pokemonCreate', [PokemonController::class, 'store'])->name('pokemonCreate');
     Route::post('/pokemonUpdate/{id}', [PokemonController::class, 'update'])->name('pokemonUpdate');
     Route::delete('/pokemonDelete/{id}', [PokemonController::class, 'destroy'])->name('pokemonDelete');
+    Route::get('/getImage/{id}', [PokemonController::class, 'getImage'])->name('getImage');
 
 
 });

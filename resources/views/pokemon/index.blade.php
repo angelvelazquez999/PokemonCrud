@@ -38,6 +38,7 @@
 </x-app-layout>
     @include('pokemon.modals.crear')
     @include('pokemon.modals.editar')
+    @include('pokemon.modals.imagen')
 @endsection
 @push('scripts')
     <script src="{{ asset('js/pokemon.js') }}" defer></script>

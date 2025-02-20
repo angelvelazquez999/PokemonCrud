@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('tipo');
             $table->string('region');
             $table->string('nivel');
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
     }
