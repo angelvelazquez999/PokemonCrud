@@ -9,8 +9,8 @@ h1 {
 
 /* Botón de crear Pokémon */
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #d9534f;
+    border-color: #d9534f;
 }
 
 
@@ -75,7 +75,7 @@ table#reportsTable .open-modal-delete-btn:hover i {
 }
 
 .modal-header {
-    background-color: #007bff;
+    background-color: #d9534f;
     color: #ffffff;
 }
 
@@ -119,7 +119,7 @@ table#reportsTable .open-modal-delete-btn:hover i {
 .dataTables_wrapper {
     margin-top: 20px;
     padding: 15px;
-    background-color: #656565;
+    background-color: #f0ebeb;
     border-radius: 8px;
 }
 
@@ -159,7 +159,7 @@ header {
 
 /* Estilo para la barra de navegación */
 nav {
-    background-color: #1f2937; /* Fondo oscuro */
+    background-color: #098d35; /* Fondo oscuro */
     color: #d41a1a; /* Color de texto blanco */
 }
 
@@ -167,4 +167,61 @@ nav {
 body.dark header, body.dark nav {
     background-color: #333; /* Fondo oscuro */
     color: #ee1717; /* Color de texto blanco */
+}
+
+/* Estilo de la tabla con color rojo en lugar del azul */
+#table-section {
+    margin-top: 30px;
+    padding: 10px;
+}
+
+table#reportsTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black; /* Borde negro de 5px */
+}
+
+table#reportsTable th, table#reportsTable td {
+    padding: 12px;
+    text-align: left;
+    border: 2px solid black; /* Borde negro de 5px para celdas */
+}
+
+table#reportsTable th {
+    background-color: #d9534f; /* Rojo en lugar de azul */
+    color: #fff;
+}
+
+table#reportsTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para los botones en la tabla */
+table#reportsTable .open-modal-edit-btn,
+table#reportsTable .open-modal-delete-btn,
+table#reportsTable .open-modal-imagen-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+}
+
+table#reportsTable .open-modal-edit-btn i,
+table#reportsTable .open-modal-delete-btn i,
+table#reportsTable .open-modal-imagen-btn i {
+    font-size: 1.2rem;
+    color: #97a0a9;
+}
+
+table#reportsTable .open-modal-edit-btn:hover i,
+table#reportsTable .open-modal-delete-btn:hover i {
+    color: #b52b27; /* Rojo oscuro */
+}
+
+.save-changes-btn{
+    background-color: #d9534f;
+}
+
+.btn.btn-secondary{
+    background-color: #d9534f;
 }
