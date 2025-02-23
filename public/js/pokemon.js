@@ -80,6 +80,7 @@ async function createPokemon() {
     formData.append("tipo", document.getElementById("pokemonType").value.trim());
     formData.append("region", document.getElementById("pokemonRegion").value);
     formData.append("nivel", document.getElementById("pokemonLevel").value);
+    formData.append("genero", document.getElementById("pokemonGender").value);
 
     // Agrega la imagen solo si se ha seleccionado
     const imagenInput = document.getElementById("pokemonImage");
