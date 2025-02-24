@@ -80,6 +80,7 @@ async function createPokemon() {
     formData.append("tipo", document.getElementById("pokemonType").value.trim());
     formData.append("region", document.getElementById("pokemonRegion").value);
     formData.append("nivel", document.getElementById("pokemonLevel").value);
+    formData.append("genero", document.getElementById("pokemonGender").value);
 
     // Agrega la imagen solo si se ha seleccionado
     const imagenInput = document.getElementById("pokemonImage");
@@ -190,12 +191,14 @@ $(document).on("click", ".open-modal-edit-btn", function () {
     const pokemonType = $(this).data("tipo");
     const pokemonRegion = $(this).data("region");
     const pokemonLevel = $(this).data("nivel");
+    const pokemonGender = $(this).data("genero");
 
     $("#editPokemonId").val(pokemonId);
     $("#editPokemonName").val(pokemonName);
     $("#editPokemonType").val(pokemonType);
     $("#editPokemonRegion").val(pokemonRegion);
     $("#editPokemonLevel").val(pokemonLevel);
+    $("#editPokemonGender").val(pokemonGender);
 
     $("#editPokemonModal").modal("show");
 });
@@ -210,6 +213,7 @@ async function updatePokemon() {
         tipo: $("#editPokemonType").val(),
         region: $("#editPokemonRegion").val(),
         nivel: $("#editPokemonLevel").val(),
+        gender: $("#editPokemonGender").val(),
     };
 
     const init = {

@@ -23,6 +23,10 @@
                         <label for="editPokemonLevel" class="form-label">Nivel</label>
                         <input type="number" class="form-control" id="editPokemonLevel" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="editPokemonGender" class="form-label">Género</label>
+                        <input type="text" class="form-control" id="editPokemonGender" required>
+                    </div>
                     <input type="hidden" id="editPokemonId">
                     <button type="submit" class="save-changes-btn btn btn-primary">Guardar cambios</button>
                 </form>

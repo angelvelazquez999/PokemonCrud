@@ -42,6 +42,7 @@ class PokemonController extends Controller
         'tipo' => 'required|string|min:1|max:100',
         'region' => 'required|string|min:1|max:100',
         'nivel' => 'required|string|min:1|max:100',
+        'genero' => 'nullable|string|min:1|max:100',
         'imagen' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
     ]);
 

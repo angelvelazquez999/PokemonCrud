@@ -22,6 +22,9 @@
                     <div class="mb-3">
                         <label for="pokemonLevel" class="form-label">Nivel</label>
                         <input type="number" class="form-control" id="pokemonLevel" name="nivel" required>
+                    </div><div class="mb-3">
+                        <label for="pokemonGender" class="form-label">Género</label>
+                        <input type="text" class="form-control" id="pokemonGender" name="genero" required>
                     </div>
                     <div class="mb-3">
                         <label for="pokemonImage">Imagen:</label>
