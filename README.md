@@ -1,5 +1,6 @@
 ## Correrlo Local we
 git clone url-del-proyecto
+
 entras a la carpeta we del proyecto
 
 composer update
@@ -15,16 +16,13 @@ php artisan migrate
 
 php artisan serve
 
-## Actualización de Eduardo si no te deja registrarte o iniciar sesión coloca esto
+## Actualización de Eduardo (falto para levantar vite)
 
 npm install
 
 npm run dev
 
-## Con esos dos comandos ya deberia dejarte registrar
-
-
-te registras y ya te vas en la nav a pokemones
+## Con esos dos comandos y ya 
 
 
 ## CSS
