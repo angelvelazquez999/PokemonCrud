@@ -1,5 +1,5 @@
 ## Correrlo Local we
-git clone <url-del-proyecto>
+git clone url-del-proyecto
 entras a la carpeta we del proyecto
 
 composer update
